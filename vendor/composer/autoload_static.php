@@ -41,6 +41,10 @@ class ComposerStaticInitbd5d628261f1599470d200425791c144
             'Foxworth42\\OAuth2\\Client\\' => 25,
             'Firebase\\JWT\\' => 13,
         ),
+        'C' => 
+        array (
+            'CakeDC\\OAuth2\\Client\\' => 21,
+        ),
         'A' => 
         array (
             'AdamPaterson\\OAuth2\\Client\\' => 27,
@@ -87,6 +91,10 @@ class ComposerStaticInitbd5d628261f1599470d200425791c144
         'Firebase\\JWT\\' => 
         array (
             0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
+        ),
+        'CakeDC\\OAuth2\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/cakedc/oauth2-cognito/src',
         ),
         'AdamPaterson\\OAuth2\\Client\\' => 
         array (

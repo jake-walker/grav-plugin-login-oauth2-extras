@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "675a0c1d9fd5a72913e53019ec35ea31",
+    "content-hash": "3eba81fb27f5f05b2680a5d966ac7421",
     "packages": [
         {
             "name": "adam-paterson/oauth2-slack",
@@ -63,6 +63,61 @@
                 "source": "https://github.com/adam-paterson/oauth2-slack/tree/master"
             },
             "time": "2017-06-20T14:43:31+00:00"
+        },
+        {
+            "name": "cakedc/oauth2-cognito",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CakeDC/oauth2-cognito.git",
+                "reference": "3f6548339f5d077cca0824d422b051c51696d040"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CakeDC/oauth2-cognito/zipball/3f6548339f5d077cca0824d422b051c51696d040",
+                "reference": "3f6548339f5d077cca0824d422b051c51696d040",
+                "shasum": ""
+            },
+            "require": {
+                "league/oauth2-client": "^2.0",
+                "php": ">=7.3"
+            },
+            "require-dev": {
+                "mockery/mockery": "~1.4",
+                "phpunit/phpunit": "^8",
+                "squizlabs/php_codesniffer": "~3.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "CakeDC\\OAuth2\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "CakeDC",
+                    "email": "team@cakedc.com",
+                    "homepage": "https://www.cakedc.com"
+                }
+            ],
+            "description": "Cognito OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+            "keywords": [
+                "Authentication",
+                "Cognito",
+                "authorization",
+                "client",
+                "oauth",
+                "oauth2"
+            ],
+            "support": {
+                "issues": "https://github.com/CakeDC/oauth2-cognito/issues",
+                "source": "https://github.com/CakeDC/oauth2-cognito/tree/2.0.0"
+            },
+            "time": "2021-04-29T07:07:29+00:00"
         },
         {
             "name": "firebase/php-jwt",
@@ -278,30 +333,33 @@
         },
         {
             "name": "omines/oauth2-gitlab",
-            "version": "3.4.0",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/omines/oauth2-gitlab.git",
-                "reference": "0c37361c54fae71a85350c445bda1834db5859af"
+                "reference": "a4aba0a2cafbd0a13119570f4ac06082d16d74f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/omines/oauth2-gitlab/zipball/0c37361c54fae71a85350c445bda1834db5859af",
-                "reference": "0c37361c54fae71a85350c445bda1834db5859af",
+                "url": "https://api.github.com/repos/omines/oauth2-gitlab/zipball/a4aba0a2cafbd0a13119570f4ac06082d16d74f2",
+                "reference": "a4aba0a2cafbd0a13119570f4ac06082d16d74f2",
                 "shasum": ""
             },
             "require": {
                 "league/oauth2-client": "^2.4.1",
-                "php": ">=7.2"
+                "php": ">=8.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.0",
-                "guzzlehttp/psr7": "^1.6",
-                "http-interop/http-factory-guzzle": "^1.0",
-                "m4tthumphrey/php-gitlab-api": "^10.0|^11.0",
-                "mockery/mockery": "^1.0",
-                "php-http/guzzle7-adapter": "^0.1",
-                "phpunit/phpunit": "^8.0|^9.0"
+                "guzzlehttp/psr7": "^2.4.1",
+                "http-interop/http-factory-guzzle": "^1.2",
+                "m4tthumphrey/php-gitlab-api": "^10.0|^11.8",
+                "mockery/mockery": "^1.5.1",
+                "php-http/guzzle7-adapter": "^1.0.0",
+                "phpstan/extension-installer": "^1.2",
+                "phpstan/phpstan": "^1.8.10",
+                "phpstan/phpstan-mockery": "^1.1",
+                "phpstan/phpstan-phpunit": "^1.1",
+                "phpunit/phpunit": "^8.0|^9.5.25"
             },
             "suggest": {
                 "m4tthumphrey/php-gitlab-api": "For further API usage using the acquired OAuth2 token"
@@ -339,27 +397,27 @@
             ],
             "support": {
                 "issues": "https://github.com/omines/oauth2-gitlab/issues",
-                "source": "https://github.com/omines/oauth2-gitlab/tree/3.4.0"
+                "source": "https://github.com/omines/oauth2-gitlab/tree/3.5.0"
             },
-            "time": "2021-02-08T12:15:55+00:00"
+            "time": "2022-10-18T09:32:39+00:00"
         },
         {
             "name": "stevenmaguire/oauth2-keycloak",
-            "version": "3.0.0",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stevenmaguire/oauth2-keycloak.git",
-                "reference": "645b84107b82a08cfed9c101081eb8548ea5be11"
+                "reference": "34e4824f5fa26aa8e90f1258859c75570c12d27a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stevenmaguire/oauth2-keycloak/zipball/645b84107b82a08cfed9c101081eb8548ea5be11",
-                "reference": "645b84107b82a08cfed9c101081eb8548ea5be11",
+                "url": "https://api.github.com/repos/stevenmaguire/oauth2-keycloak/zipball/34e4824f5fa26aa8e90f1258859c75570c12d27a",
+                "reference": "34e4824f5fa26aa8e90f1258859c75570c12d27a",
                 "shasum": ""
             },
             "require": {
                 "firebase/php-jwt": "~4.0|~5.0",
-                "league/oauth2-client": "^2.0 <2.3.0"
+                "league/oauth2-client": "^2.0"
             },
             "require-dev": {
                 "mockery/mockery": "~0.9",
@@ -399,9 +457,9 @@
             ],
             "support": {
                 "issues": "https://github.com/stevenmaguire/oauth2-keycloak/issues",
-                "source": "https://github.com/stevenmaguire/oauth2-keycloak/tree/3.0.0"
+                "source": "https://github.com/stevenmaguire/oauth2-keycloak/tree/3.2.0"
             },
-            "time": "2022-01-23T18:01:00+00:00"
+            "time": "2022-12-16T12:46:38+00:00"
         },
         {
             "name": "thenetworg/oauth2-azure",
@@ -517,20 +575,22 @@
         },
         {
             "name": "wohali/oauth2-discord-new",
-            "version": "1.1.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wohali/oauth2-discord-new.git",
-                "reference": "0dcb5059cded358f55ae566de9621652cf8542c6"
+                "reference": "2df4d2a882e04c749880797704e4bde8f00ea1d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wohali/oauth2-discord-new/zipball/0dcb5059cded358f55ae566de9621652cf8542c6",
-                "reference": "0dcb5059cded358f55ae566de9621652cf8542c6",
+                "url": "https://api.github.com/repos/wohali/oauth2-discord-new/zipball/2df4d2a882e04c749880797704e4bde8f00ea1d9",
+                "reference": "2df4d2a882e04c749880797704e4bde8f00ea1d9",
                 "shasum": ""
             },
             "require": {
-                "league/oauth2-client": "^2.0"
+                "ext-json": "*",
+                "league/oauth2-client": "^2.0",
+                "php": "^7.2|^8.0"
             },
             "conflict": {
                 "team-reflex/oauth2-discord": ">=1.0"
@@ -574,9 +634,9 @@
             ],
             "support": {
                 "issues": "https://github.com/wohali/oauth2-discord-new/issues",
-                "source": "https://github.com/wohali/oauth2-discord-new/tree/master"
+                "source": "https://github.com/wohali/oauth2-discord-new/tree/1.2.1"
             },
-            "time": "2020-06-12T07:27:09+00:00"
+            "time": "2022-12-29T18:45:10+00:00"
         }
     ],
     "packages-dev": [],
@@ -589,5 +649,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.6.0"
 }

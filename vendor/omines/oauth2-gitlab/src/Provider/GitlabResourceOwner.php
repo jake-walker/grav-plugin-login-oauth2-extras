@@ -11,6 +11,7 @@
 namespace Omines\OAuth2\Client\Provider;
 
 use Gitlab\Client;
+use Gitlab\HttpClient\Builder;
 use League\OAuth2\Client\Provider\ResourceOwnerInterface;
 use League\OAuth2\Client\Token\AccessToken;
 
@@ -21,16 +22,11 @@ use League\OAuth2\Client\Token\AccessToken;
  */
 class GitlabResourceOwner implements ResourceOwnerInterface
 {
-    const PATH_API = '/api/v4/';
+    public const PATH_API = '/api/v4/';
 
-    /** @var array */
-    private $data;
-
-    /** @var string */
-    private $domain;
-
-    /** @var AccessToken */
-    private $token;
+    private array $data;
+    private string $domain;
+    private AccessToken $token;
 
     /**
      * Creates new resource owner.
@@ -54,12 +50,12 @@ class GitlabResourceOwner implements ResourceOwnerInterface
      *
      * Requires optional Gitlab API client to be installed.
      */
-    public function getApiClient(): Client
+    public function getApiClient(Builder $builder = null): Client
     {
         if (!class_exists('\\Gitlab\\Client')) {
             throw new \LogicException(__METHOD__ . ' requires package m4tthumphrey/php-gitlab-api to be installed and autoloaded'); // @codeCoverageIgnore
         }
-        $client = new Client();
+        $client = new Client($builder);
         $client->setUrl(rtrim($this->domain, '/') . self::PATH_API);
         $client->authenticate($this->token->getToken(), Client::AUTH_OAUTH_TOKEN);
 
@@ -71,9 +67,6 @@ class GitlabResourceOwner implements ResourceOwnerInterface
         return $this->domain;
     }
 
-    /**
-     * @return $this
-     */
     public function setDomain(string $domain): self
     {
         $this->domain = $domain;
@@ -107,10 +100,8 @@ class GitlabResourceOwner implements ResourceOwnerInterface
 
     /**
      * URL to the user's avatar.
-     *
-     * @return string|null
      */
-    public function getAvatarUrl(): string
+    public function getAvatarUrl(): ?string
     {
         return $this->get('avatar_url');
     }
@@ -118,7 +109,7 @@ class GitlabResourceOwner implements ResourceOwnerInterface
     /**
      * URL to the user's profile page.
      */
-    public function getProfileUrl(): string
+    public function getProfileUrl(): ?string
     {
         return $this->get('web_url');
     }
@@ -141,7 +132,7 @@ class GitlabResourceOwner implements ResourceOwnerInterface
      */
     public function isAdmin(): bool
     {
-        return (bool) $this->get('is_admin', false);
+        return $this->get('is_admin', false);
     }
 
     /**
@@ -149,7 +140,7 @@ class GitlabResourceOwner implements ResourceOwnerInterface
      */
     public function isExternal(): bool
     {
-        return (bool) $this->get('external', true);
+        return $this->get('external', true);
     }
 
     /**
@@ -160,12 +151,8 @@ class GitlabResourceOwner implements ResourceOwnerInterface
         return $this->data;
     }
 
-    /**
-     * @param  mixed|null $default
-     * @return mixed|null
-     */
-    protected function get(string $key, $default = null)
+    protected function get(string $key, mixed $default = null): mixed
     {
-        return isset($this->data[$key]) ? $this->data[$key] : $default;
+        return $this->data[$key] ?? $default;
     }
 }

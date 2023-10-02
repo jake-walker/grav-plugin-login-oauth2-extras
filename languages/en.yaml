@@ -8,3 +8,5 @@ PLUGIN_LOGIN_OAUTH2_EXTRAS:
   USERDATA_EMAIL: "Email key"
   OKTA:
     ISSUER: "Issuer"
+  COGNITO:
+    DOMAIN: "Domain"

@@ -801,7 +801,7 @@ form:
                 providers.keycloak.client_secret:
                   type: text
                   label: PLUGIN_LOGIN_OAUTH2.CLIENT_SECRET
-                  
+
                 providers.keycloak.authserver_url:
                   type: text
                   label: PLUGIN_LOGIN_OAUTH2_EXTRAS.AUTHSERVER_URL
@@ -825,7 +825,7 @@ form:
                 providers.keycloak.userdata_login:
                   type: text
                   label: PLUGIN_LOGIN_OAUTH2_EXTRAS.USERDATA_LOGIN
-                  
+
                 providers.keycloak.userdata_fullname:
                   type: text
                   label: PLUGIN_LOGIN_OAUTH2_EXTRAS.USERDATA_FULLNAME
@@ -890,7 +890,7 @@ form:
                 admin.providers.keycloak.userdata_login:
                   type: text
                   label: PLUGIN_LOGIN_OAUTH2_EXTRAS.USERDATA_LOGIN
-                  
+
                 admin.providers.keycloak.userdata_fullname:
                   type: text
                   label: PLUGIN_LOGIN_OAUTH2_EXTRAS.USERDATA_FULLNAME
@@ -1003,4 +1003,104 @@ form:
           type: display
           style: vertical
           content: '[<i class="fa fa-book"></i> Okta for OAuth2](https://github.com/foxworth42/oauth2-okta?target=_blank)'
+          markdown: true
+
+    cognito:
+      type: fieldset
+      title: Cognito
+      collapsible: true
+
+      fields:
+
+        cognito_columns:
+          type: columns
+
+          fields:
+
+            cognito_column_left:
+              type: column
+
+              fields:
+
+                cognito.site:
+                  type: display
+                  style: vertical
+                  content: '<h3>Site</h3>'
+
+                providers.cognito.enabled:
+                  type: toggle
+                  label: Enabled
+                  highlight: 1
+                  default: 0
+                  options:
+                    1: Enabled
+                    0: Disabled
+                  validate:
+                    type: bool
+
+                providers.cognito.client_id:
+                  type: text
+                  label: PLUGIN_LOGIN_OAUTH2.CLIENT_ID
+
+                providers.cognito.client_secret:
+                  type: text
+                  label: PLUGIN_LOGIN_OAUTH2.CLIENT_SECRET
+
+                providers.cognito.domain:
+                  type: text
+                  label: PLUGIN_LOGIN_OAUTH2_EXTRAS.COGNITO.DOMAIN
+
+                providers.cognito.options.scope:
+                  type: selectize
+                  size: large
+                  label: PLUGIN_LOGIN_OAUTH2.SCOPE
+                  classes: fancy
+                  validate:
+                    type: commalist
+
+            cognito_column_right:
+              type: column
+
+              fields:
+
+                cognito.admin:
+                  type: display
+                  style: vertical
+                  content: '<h3>Admin</h3>'
+
+                admin.providers.cognito.enabled:
+                  type: toggle
+                  label: Enabled
+                  highlight: 1
+                  default: 0
+                  options:
+                    1: Enabled
+                    0: Disabled
+                  validate:
+                    type: bool
+
+                admin.providers.cognito.client_id:
+                  type: text
+                  label: PLUGIN_LOGIN_OAUTH2.CLIENT_ID
+
+                admin.providers.cognito.client_secret:
+                  type: text
+                  label: PLUGIN_LOGIN_OAUTH2.CLIENT_SECRET
+
+                admin.providers.cognito.domain:
+                  type: text
+                  label: PLUGIN_LOGIN_OAUTH2_EXTRAS.COGNITO.DOMAIN
+
+                admin.providers.cognito.options.scope:
+                  type: selectize
+                  size: large
+                  label: PLUGIN_LOGIN_OAUTH2.SCOPE
+                  classes: fancy
+                  validate:
+                    type: commalist
+
+        providers.cognito.description:
+          type: display
+          style: vertical
+          content: '[<i class="fa fa-book"></i> Cognito for OAuth2](https://github.com/CakeDC/oauth2-cognito?target=_blank)'
           markdown: true

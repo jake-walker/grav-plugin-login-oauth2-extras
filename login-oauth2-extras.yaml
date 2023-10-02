@@ -65,6 +65,13 @@ providers:
       issuer:
       options:
         scope: ['openid', 'email', 'profile']
+  cognito:
+    enabled: false
+    client_id:
+    client_secret:
+    domain:
+    options:
+      scope: ['openid', 'email', 'profile']
 
 admin:
   enabled: true
@@ -132,5 +139,12 @@ admin:
       client_id:
       client_secret:
       issuer:
+      options:
+        scope: ['openid', 'email', 'profile']
+    cognito:
+      enabled: false
+      client_id:
+      client_secret:
+      domain:
       options:
         scope: ['openid', 'email', 'profile']
